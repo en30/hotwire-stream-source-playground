@@ -1,6 +1,6 @@
 # hotwire-stream-source-playground
 
-Empty project.
+This application demonstrates how to create a simple source of Hotwire's Turbo Streams.
 
 ## Building and running on localhost
 
@@ -31,4 +31,3 @@ node dist/bundle.js
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)
-
