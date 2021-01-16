@@ -1,13 +1,16 @@
 import { connectStreamSource, disconnectStreamSource } from "@hotwired/turbo"
 
 class TickElement extends HTMLElement {
+  timerId?: number;
+
   connectedCallback() {
     connectStreamSource(this);
-    setInterval(this.dispatchMessageEvent.bind(this), 1000)
+    this.timerId = setInterval(this.dispatchMessageEvent.bind(this), 1000);
   }
 
   disconnectedCallback() {
     disconnectStreamSource(this);
+    if (this.timerId) clearInterval(this.timerId);
   }
 
   dispatchMessageEvent() {
